@@ -3,7 +3,7 @@ import styles from "@/styles/Header.module.css";
 
 export default function Header() {
   const [showLinks, setShowLinks] = useState(false);
-  const [windowHeight, setWindowHeight] = useState("");
+  const [windowHeight, setWindowHeight] = useState(0);
   const [scrolled, setScrolled] = useState(false);
 
   const handleToggle = () => setShowLinks(!showLinks);
@@ -16,7 +16,7 @@ export default function Header() {
   const handleScroll = () => setWindowHeight(window.scrollY);
 
   useEffect(() => {
-    if (windowHeight > 20) {
+    if (windowHeight > 80) {
       setScrolled(true);
     } else {
       setScrolled(false);

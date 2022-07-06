@@ -1,7 +1,7 @@
 .hero {
   display: flex;
   flex-direction: column;
-  padding: 64px 0 18px;
+  padding: 64px 16px 18px;
   text-align: center;
   row-gap: 3rem;
 }
@@ -12,6 +12,30 @@
 }
 .heroCover {
   display: block;
+}
+
+.services {
+  padding: 48px 16px;
+  background-color: #dcd4d8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.serviceTitle h3,
+.serviceItemText h5 {
+  font-size: 1.25rem;
+}
+.serviceDetails {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.serviceItem,
+.serviceItemText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
 }
 
 @media screen and (min-width: 640px) {
