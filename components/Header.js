@@ -1,13 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/Header.module.css";
 
 export default function Header() {
   const [showLinks, setShowLinks] = useState(false);
+  const [windowHeight, setWindowHeight] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
   const handleToggle = () => setShowLinks(!showLinks);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = () => setWindowHeight(window.scrollY);
+
+  useEffect(() => {
+    if (windowHeight > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  }, [windowHeight]);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={
+        scrolled ? `${styles.header} ${styles.addShadow}` : styles.header
+      }
+    >
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
           <h4 className={styles.logo}>Nadia</h4>
@@ -31,7 +52,9 @@ export default function Header() {
 
         <nav>
           <ul
-            className={`${styles.links} ${showLinks ? styles.showLinks : ""}`}
+            className={
+              showLinks ? `${styles.links} ${styles.showLinks}` : styles.links
+            }
           >
             <li>
               <a href="#">Menu</a>

@@ -22,7 +22,7 @@ export default function HomePage() {
           <button className="btn">about us</button>
         </div>
         <div className={styles.heroCover}>
-          <Image src={heroCover} alt="hero-cover" />
+          <Image src={heroCover} alt="hero-cover" layout="responsive" />
         </div>
       </section>
     </Layout>
