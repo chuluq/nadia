@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  padding: 1rem;
+}
+.tagline h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    max-width: 1120px;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  .tagline h5 {
+    max-width: 288px;
+  }
+  .details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+  }
+}
