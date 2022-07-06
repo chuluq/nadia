@@ -11,7 +11,7 @@
 }
 .navToggle {
   font-size: 1.5rem;
-  color: #645cff;
+  color: #455040;
   background-color: transparent;
   border-color: transparent;
   transition: 0.3s ease-in-out all;
@@ -26,7 +26,6 @@
   font-size: 1.5rem;
 }
 .links a {
-  color: #334155;
   font-size: 1rem;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -36,7 +35,7 @@
 }
 .links a:hover {
   padding-left: 1.5rem;
-  color: #645cff;
+  color: #455040;
   text-decoration: underline;
   text-underline-offset: 8px;
 }
@@ -60,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 0;
   }
   .links {
     height: auto;

@@ -24,6 +24,11 @@ li {
   list-style: none;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 h1,
 h2,
 h3,
@@ -36,4 +41,15 @@ h6 {
 .icon {
   width: 24px;
   height: 24px;
+}
+.btn {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 16px 40px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
 }
