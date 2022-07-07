@@ -3,6 +3,9 @@ import Layout from "@/components/Layout";
 import heroCover from "@/assets/hero-cover.webp";
 import productCover1 from "@/assets/product-cover-1.png";
 import productCover2 from "@/assets/product-cover-2.png";
+import aboutCover1 from "@/assets/about-cover-1.png";
+import aboutCover2 from "@/assets/about-cover-2.png";
+import aboutCover3 from "@/assets/about-cover-3.png";
 import styles from "@/styles/Home.module.css";
 
 export default function HomePage() {
@@ -79,6 +82,38 @@ export default function HomePage() {
         </div>
         <div className={styles.menuCta}>
           <button className="btn btn-secondary">read our full menu</button>
+        </div>
+      </section>
+
+      <section className={styles.about}>
+        <div className={styles.aboutCover}>
+          <Image src={aboutCover1} alt="about-cover-1" />
+        </div>
+        <div className={styles.aboutDetails}>
+          <div className={styles.aboutText}>
+            <h3>About us</h3>
+            <p>
+              Nadia was originally the vision of two coffee nerds who were
+              unsatisfied with the quality of the coffee in their neighborhood.
+              What started as a pop-up coffee stall has transformed into a full
+              cafe with seating for over 50 guests.
+            </p>
+            <p>
+              Our aim isn’t just to give people a place to meet and drink
+              coffee, but to get people excited about the coffee they drink, and
+              where it comes from. Got more questions? Drop by and join us for a
+              chat.
+            </p>
+          </div>
+          <div className={styles.aboutCover}>
+            <Image src={aboutCover2} alt="about-cover-2" />
+          </div>
+        </div>
+        <div className={styles.aboutCover}>
+          <Image src={aboutCover3} alt="about-cover-3" />
+        </div>
+        <div className={styles.aboutCta}>
+          <button className="btn">more about us</button>
         </div>
       </section>
     </Layout>
