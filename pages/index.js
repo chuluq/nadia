@@ -66,6 +66,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className={styles.menu}>
+        <div className={styles.menuTitle}>
+          <h3>Our menu</h3>
+        </div>
+        <div className={styles.menuList}>
+          <p>snack x salads</p>
+          <p>mains</p>
+          <p>pastry</p>
+          <p>our specials</p>
+        </div>
+        <div className={styles.menuCta}>
+          <button className="btn btn-secondary">read our full menu</button>
+        </div>
+      </section>
     </Layout>
   );
 }

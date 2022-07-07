@@ -52,4 +52,12 @@ h6 {
   border-radius: 4px;
   text-transform: capitalize;
   font-size: 14px;
+  font-weight: 500;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn-secondary {
+  background-color: #fff;
+  color: #222;
 }
