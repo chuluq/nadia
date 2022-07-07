@@ -61,3 +61,70 @@ h6 {
   background-color: #fff;
   color: #222;
 }
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 48px 16px;
+}
+.booking-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1rem;
+}
+.booking-text h3 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.booking-text p {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.booking-cta {
+  display: flex;
+  justify-content: center;
+}
+.text-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+input,
+textarea {
+  padding: 16px 20px;
+  width: 100%;
+  background-color: #f1f1f1;
+  outline: transparent;
+  border: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  .booking {
+    max-width: 1120px;
+    margin: 0 auto;
+    row-gap: 4rem;
+  }
+  .booking-text {
+    row-gap: 2rem;
+  }
+  .booking-text h3 {
+    font-size: 6rem;
+  }
+  .booking-text p {
+    font-size: 2rem;
+  }
+  .booking-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
