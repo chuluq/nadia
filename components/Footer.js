@@ -1,3 +1,5 @@
+import FacebookIcon from "@/assets/facebook.svg";
+import InstagramIcon from "@/assets/instagram.svg";
 import styles from "@/styles/Footer.module.css";
 
 export default function Footer() {
@@ -20,6 +22,14 @@ export default function Footer() {
         <div className={styles.socials}>
           <p>Let&apos;s be friends</p>
           {/* icons */}
+          <div className={styles.socialIcon}>
+            <div className="icon icon-fb">
+              <FacebookIcon />
+            </div>
+            <div className="icon icon-ig">
+              <InstagramIcon />
+            </div>
+          </div>
         </div>
       </div>
     </footer>

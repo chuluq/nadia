@@ -41,7 +41,16 @@ h6 {
 .icon {
   width: 24px;
   height: 24px;
+  cursor: pointer;
+  fill: #222;
 }
+.icon-fb:hover {
+  fill: #1877f2;
+}
+.icon-ig:hover {
+  fill: #e4405f;
+}
+
 .btn {
   display: inline-block;
   background: #222;
