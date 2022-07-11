@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { links } from "@/constants/links";
 import styles from "@/styles/Header.module.css";
 
 export default function Header() {
@@ -31,7 +33,9 @@ export default function Header() {
     >
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
-          <h4 className={styles.logo}>Nadia</h4>
+          <Link href="/">
+            <h4 className={styles.logo}>Nadia</h4>
+          </Link>
           <button className={styles.navToggle} onClick={handleToggle}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,21 +55,19 @@ export default function Header() {
         </div>
 
         <nav>
-          <ul
+          <div
             className={
               showLinks ? `${styles.links} ${styles.showLinks}` : styles.links
             }
           >
-            <li>
-              <a href="#">Menu</a>
-            </li>
-            <li>
-              <a href="#">About us</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
+            {links.map((link) => {
+              return (
+                <Link key={link.id} href={link.url}>
+                  <a>{link.text}</a>
+                </Link>
+              );
+            })}
+          </div>
         </nav>
       </div>
     </header>
