@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
 
 export default function ContactPage() {
-  return <Layout>ContactPage</Layout>;
+  return <Layout title="Contact Nadia Cafe">ContactPage</Layout>;
 }

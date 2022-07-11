@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
 
 export default function AboutPage() {
-  return <Layout>AboutPage</Layout>;
+  return <Layout title="About Nadia Cafe">AboutPage</Layout>;
 }
