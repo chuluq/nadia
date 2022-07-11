@@ -21,14 +21,13 @@ export default function Footer() {
         </div>
         <div className={styles.socials}>
           <p>Let&apos;s be friends</p>
-          {/* icons */}
           <div className={styles.socialIcon}>
-            <div className="icon icon-fb">
+            <a href="https://facebook.com" className="icon icon-fb">
               <FacebookIcon />
-            </div>
-            <div className="icon icon-ig">
+            </a>
+            <a href="https://instagram.com" className="icon icon-ig">
               <InstagramIcon />
-            </div>
+            </a>
           </div>
         </div>
       </div>
