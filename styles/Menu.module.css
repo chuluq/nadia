@@ -109,7 +109,6 @@
   font-size: 1.125rem;
 }
 .orderMenuImage {
-  cursor: pointer;
   transition: 0.3s ease-in-out all;
 }
 .orderMenuImage:hover {
@@ -155,6 +154,9 @@
   .orderMenus {
     max-width: 1120px;
     margin: 0 auto;
+  }
+  .heroTitle h1 {
+    font-size: 6rem;
   }
   .heroCaption {
     max-width: 800px;
