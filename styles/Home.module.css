@@ -92,15 +92,26 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .hero {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
   .heroCaption {
     max-width: 800px;
     margin: 0 auto;
   }
+
+  .serviceTitle,
   .serviceDetails {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .serviceDetails {
+    display: flex;
+    flex-direction: row;
     column-gap: 2.5rem;
   }
+
   .about {
     padding: 0;
     padding-bottom: 48px;
@@ -115,7 +126,15 @@
     align-items: center;
     column-gap: 2rem;
   }
-  .aboutCover {
+  .aboutCover1,
+  .aboutCover3 {
     padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .serviceTitle,
+  .serviceDetails {
+    padding: 0 1rem;
   }
 }

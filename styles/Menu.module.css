@@ -18,6 +18,8 @@
   padding: 48px 16px;
   background-color: #455040;
   color: #f8d6b4;
+}
+.menuDetails {
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
@@ -106,6 +108,13 @@
   font-weight: 600;
   font-size: 1.125rem;
 }
+.orderMenuImage {
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+}
+.orderMenuImage:hover {
+  transform: scale(1.05);
+}
 
 @media screen and (min-width: 640px) {
   .menuItem {
@@ -123,7 +132,7 @@
 
 @media screen and (min-width: 768px) {
   .menus {
-    padding: 64px;
+    padding: 64px 16px;
   }
   .menuList {
     display: grid;
@@ -141,12 +150,24 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .hero {
+  .hero,
+  .menuDetails,
+  .orderMenus {
     max-width: 1120px;
     margin: 0 auto;
   }
   .heroCaption {
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  .menuList {
+    padding: 0 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .orderMenus {
+    padding: 0 1rem;
   }
 }

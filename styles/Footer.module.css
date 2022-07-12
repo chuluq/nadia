@@ -27,15 +27,15 @@
 @media screen and (min-width: 768px) {
   .footer {
     max-width: 1120px;
-    padding: 2.5rem;
+    padding: 2.5rem 1rem;
     margin: 0 auto;
   }
   .tagline h5 {
     max-width: 288px;
   }
   .details {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

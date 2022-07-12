@@ -86,7 +86,7 @@ export default function HomePage() {
       </section>
 
       <section className={styles.about}>
-        <div className={styles.aboutCover}>
+        <div className={styles.aboutCover1}>
           <Image src={aboutCover1} alt="about-cover-1" />
         </div>
         <div className={styles.aboutDetails}>
@@ -105,11 +105,11 @@ export default function HomePage() {
               chat.
             </p>
           </div>
-          <div className={styles.aboutCover}>
+          <div className={styles.aboutCover2}>
             <Image src={aboutCover2} alt="about-cover-2" />
           </div>
         </div>
-        <div className={styles.aboutCover}>
+        <div className={styles.aboutCover3}>
           <Image src={aboutCover3} alt="about-cover-3" />
         </div>
         <div className={styles.aboutCta}>

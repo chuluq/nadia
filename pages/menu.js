@@ -31,28 +31,30 @@ export default function MenuPage() {
       </section>
 
       <section className={styles.menus}>
-        {menus.map((menu) => {
-          return (
-            <div key={menu.id} className={styles.menu}>
-              <div className={styles.menuTitle}>
-                <h3>{menu.name}</h3>
-              </div>
-              <div className={styles.menuList}>
-                {menu.subMenu.map((sub) => {
-                  return (
-                    <div key={sub.id} className={styles.menuItem}>
-                      <div className={styles.menuItemDetails}>
-                        <p className={styles.menuName}>{sub.name}</p>
-                        <p className={styles.menuDesc}>{sub.desc}</p>
+        <div className={styles.menuDetails}>
+          {menus.map((menu) => {
+            return (
+              <div key={menu.id} className={styles.menu}>
+                <div className={styles.menuTitle}>
+                  <h3>{menu.name}</h3>
+                </div>
+                <div className={styles.menuList}>
+                  {menu.subMenu.map((sub) => {
+                    return (
+                      <div key={sub.id} className={styles.menuItem}>
+                        <div className={styles.menuItemDetails}>
+                          <p className={styles.menuName}>{sub.name}</p>
+                          <p className={styles.menuDesc}>{sub.desc}</p>
+                        </div>
+                        <div className={styles.menuPrice}>{sub.price}</div>
                       </div>
-                      <div className={styles.menuPrice}>{sub.price}</div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </section>
 
       <section className={styles.order}>
