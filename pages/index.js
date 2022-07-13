@@ -9,8 +9,10 @@ import aboutCover2 from "@/assets/about-cover-2.png";
 import aboutCover3 from "@/assets/about-cover-3.png";
 import styles from "@/styles/Home.module.css";
 import Booking from "@/components/Booking";
+import { API_URL } from "@/config/index";
 
-export default function HomePage() {
+export default function HomePage({ categories }) {
+  console.log(categories);
   return (
     <Layout>
       <section className={styles.hero}>
@@ -79,10 +81,9 @@ export default function HomePage() {
           <h3>Our menu</h3>
         </div>
         <div className={styles.menuList}>
-          <p>snack x salads</p>
-          <p>mains</p>
-          <p>pastry</p>
-          <p>our specials</p>
+          {categories?.data?.map((category) => {
+            return <p key={category.id}>{category.attributes.name}</p>;
+          })}
         </div>
         <Link href="/menu">
           <div className={styles.menuCta}>
@@ -128,4 +129,14 @@ export default function HomePage() {
       <Booking />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${API_URL}/api/categories`);
+  const categories = await res.json();
+
+  return {
+    props: { categories },
+    revalidate: 1,
+  };
 }

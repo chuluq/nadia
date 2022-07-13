@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import Booking from "@/components/Booking";
 import menuCover from "@/assets/menu-cover.webp";
-import { menus } from "@/constants/menus";
+// import { menus } from "@/constants/menus";
 import { orders } from "@/constants/order";
 import styles from "@/styles/Menu.module.css";
-import Booking from "@/components/Booking";
+import { API_URL } from "@/config/index";
 
-export default function MenuPage() {
+export default function MenuPage({ categories }) {
+  console.log(categories);
+
   return (
     <Layout title="Nadia Cafe | Menus">
       <section className={styles.hero}>
@@ -33,21 +36,30 @@ export default function MenuPage() {
 
       <section className={styles.menus}>
         <div className={styles.menuDetails}>
-          {menus.map((menu) => {
+          {categories?.data?.map((category) => {
             return (
-              <div key={menu.id} className={styles.menu}>
+              <div key={category.id} className={styles.menu}>
                 <div className={styles.menuTitle}>
-                  <h3>{menu.name}</h3>
+                  <h3>{category.attributes.name}</h3>
                 </div>
                 <div className={styles.menuList}>
-                  {menu.subMenu.map((sub) => {
+                  {category.attributes.menus.data.map((menu) => {
                     return (
-                      <div key={sub.id} className={styles.menuItem}>
+                      <div key={menu.id} className={styles.menuItem}>
                         <div className={styles.menuItemDetails}>
-                          <p className={styles.menuName}>{sub.name}</p>
-                          <p className={styles.menuDesc}>{sub.desc}</p>
+                          <p className={styles.menuName}>
+                            {menu.attributes.name}
+                          </p>
+                          <p className={styles.menuDesc}>
+                            {menu.attributes.description}
+                          </p>
                         </div>
-                        <div className={styles.menuPrice}>{sub.price}</div>
+                        <div className={styles.menuPrice}>
+                          {new Intl.NumberFormat("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                          }).format(menu.attributes.price)}
+                        </div>
                       </div>
                     );
                   })}
@@ -83,4 +95,14 @@ export default function MenuPage() {
       <Booking />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${API_URL}/api/categories?populate=*`);
+  const categories = await res.json();
+
+  return {
+    props: { categories },
+    revalidate: 1,
+  };
 }
