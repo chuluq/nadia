@@ -1,0 +1,49 @@
+.leading {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 64px 16px;
+}
+.leadingText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  text-align: center;
+}
+.leadingText h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+.leadingCover {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.875rem;
+}
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .leading {
+    max-width: 1120px;
+    margin: 0 auto;
+    row-gap: 3rem;
+  }
+  .leadingText {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .leadingText h1 {
+    font-size: 6rem;
+  }
+  .leadingCover {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .cover2 {
+    grid-area: 1/2/3/3;
+  }
+}

@@ -7,7 +7,7 @@ import styles from "@/styles/Menu.module.css";
 
 export default function MenuPage() {
   return (
-    <Layout title="Nadia Cafe Menus">
+    <Layout title="Nadia Cafe | Menus">
       <section className={styles.hero}>
         <div className={styles.heroTitle}>
           <h1>Menu</h1>
