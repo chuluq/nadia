@@ -7,6 +7,7 @@ import aboutCover1 from "@/assets/about-cover-1.png";
 import aboutCover2 from "@/assets/about-cover-2.png";
 import aboutCover3 from "@/assets/about-cover-3.png";
 import styles from "@/styles/Home.module.css";
+import Booking from "@/components/Booking";
 
 export default function HomePage() {
   return (
@@ -117,33 +118,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="booking">
-        <div className="booking-text">
-          <h3>Book a table</h3>
-          <p>Do it in advance</p>
-        </div>
-        <form className="booking-form">
-          <div className="text-field">
-            <label htmlFor="name">Name*</label>
-            <input type="text" placeholder="Your name" />
-          </div>
-          <div className="text-field">
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" placeholder="Your last name" />
-          </div>
-          <div className="text-field">
-            <label htmlFor="email">Email*</label>
-            <input type="email" placeholder="Your email address" />
-          </div>
-          <div className="text-field">
-            <label htmlFor="message">Message*</label>
-            <textarea placeholder="Enter your message" rows="3" />
-          </div>
-        </form>
-        <div className="booking-cta">
-          <button className="btn">Book a table</button>
-        </div>
-      </section>
+      <Booking />
     </Layout>
   );
 }

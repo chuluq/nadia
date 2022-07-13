@@ -40,4 +40,7 @@
     margin: 0 auto;
     row-gap: 3rem;
   }
+  .contactTitle h1 {
+    font-size: 6rem;
+  }
 }

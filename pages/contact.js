@@ -1,3 +1,4 @@
+import Booking from "@/components/Booking";
 import Layout from "@/components/Layout";
 import styles from "@/styles/Contact.module.css";
 
@@ -38,6 +39,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <Booking />
     </Layout>
   );
 }

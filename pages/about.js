@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import Booking from "@/components/Booking";
 import aboutCover11 from "@/assets/about-cover-11.png";
 import aboutCover12 from "@/assets/about-cover-12.png";
 import aboutCover3 from "@/assets/about-cover-3.png";
@@ -43,6 +44,8 @@ export default function AboutPage() {
           <Image src={aboutCover3} alt="about-cover-3" />
         </div>
       </section>
+
+      <Booking />
     </Layout>
   );
 }

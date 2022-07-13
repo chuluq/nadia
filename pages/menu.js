@@ -4,6 +4,7 @@ import menuCover from "@/assets/menu-cover.webp";
 import { menus } from "@/constants/menus";
 import { orders } from "@/constants/order";
 import styles from "@/styles/Menu.module.css";
+import Booking from "@/components/Booking";
 
 export default function MenuPage() {
   return (
@@ -78,6 +79,8 @@ export default function MenuPage() {
           })}
         </div>
       </section>
+
+      <Booking />
     </Layout>
   );
 }
