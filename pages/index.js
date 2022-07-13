@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Layout from "@/components/Layout";
 import heroCover from "@/assets/hero-cover.webp";
 import productCover1 from "@/assets/product-cover-1.png";
@@ -24,9 +25,11 @@ export default function HomePage() {
             roasted to perfection.
           </p>
         </div>
-        <div className={styles.heroCta}>
-          <button className="btn">about us</button>
-        </div>
+        <Link href="/about">
+          <div className={styles.heroCta}>
+            <button className="btn">about us</button>
+          </div>
+        </Link>
         <div className={styles.heroCover}>
           <Image
             src={heroCover}
@@ -81,9 +84,11 @@ export default function HomePage() {
           <p>pastry</p>
           <p>our specials</p>
         </div>
-        <div className={styles.menuCta}>
-          <button className="btn btn-secondary">read our full menu</button>
-        </div>
+        <Link href="/menu">
+          <div className={styles.menuCta}>
+            <button className="btn btn-secondary">read our full menu</button>
+          </div>
+        </Link>
       </section>
 
       <section className={styles.about}>
@@ -113,9 +118,11 @@ export default function HomePage() {
         <div className={styles.aboutCover3}>
           <Image src={aboutCover3} alt="about-cover-3" />
         </div>
-        <div className={styles.aboutCta}>
-          <button className="btn">more about us</button>
-        </div>
+        <Link href="/about">
+          <div className={styles.aboutCta}>
+            <button className="btn">more about us</button>
+          </div>
+        </Link>
       </section>
 
       <Booking />
