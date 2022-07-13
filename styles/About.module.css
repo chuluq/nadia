@@ -17,6 +17,7 @@
 .leadingCover {
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 0.875rem;
 }
 .aboutText {
@@ -41,6 +42,7 @@
   .leadingCover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
     gap: 2rem;
   }
   .cover2 {
