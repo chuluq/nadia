@@ -1,0 +1,25 @@
+.error {
+  text-align: center;
+  padding: 64px 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.error h1 {
+  font-size: 50px;
+}
+.error h4 {
+  text-transform: capitalize;
+}
+.error svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .error {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
