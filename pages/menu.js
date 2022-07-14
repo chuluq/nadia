@@ -2,14 +2,10 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 import Booking from "@/components/Booking";
 import menuCover from "@/assets/menu-cover.webp";
-// import { menus } from "@/constants/menus";
-import { orders } from "@/constants/order";
 import styles from "@/styles/Menu.module.css";
 import { API_URL } from "@/config/index";
 
-export default function MenuPage({ categories }) {
-  console.log(categories);
-
+export default function MenuPage({ categories, orders }) {
   return (
     <Layout title="Nadia Cafe | Menus">
       <section className={styles.hero}>
@@ -76,15 +72,25 @@ export default function MenuPage({ categories }) {
           <h5>Order on the go</h5>
         </div>
         <div className={styles.orderMenus}>
-          {orders.map((order) => {
+          {orders?.data?.map((order) => {
             return (
               <div key={order.id} className={styles.orderMenu}>
                 <div className={styles.orderMenuImage}>
-                  <Image src={order.pic} alt={order.name} />
+                  <Image
+                    src={order.attributes.image.data.attributes.url}
+                    alt={order.attributes.name}
+                    width={350}
+                    height={375}
+                    loading="lazy"
+                  />
                 </div>
                 <div className={styles.orderMenuDetails}>
-                  <p className={styles.orderMenuName}>{order.name}</p>
-                  <p className={styles.orderMenuPrice}>{order.price}</p>
+                  <p className={styles.orderMenuName}>
+                    {order.attributes.name}
+                  </p>
+                  <p className={styles.orderMenuPrice}>
+                    ${order.attributes.price}
+                  </p>
                 </div>
               </div>
             );
@@ -98,11 +104,14 @@ export default function MenuPage({ categories }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/categories?populate=*`);
-  const categories = await res.json();
+  const categoryRes = await fetch(`${API_URL}/api/categories?populate=*`);
+  const categories = await categoryRes.json();
+
+  const orderRes = await fetch(`${API_URL}/api/orders?populate=*`);
+  const orders = await orderRes.json();
 
   return {
-    props: { categories },
+    props: { categories, orders },
     revalidate: 1,
   };
 }

@@ -109,6 +109,7 @@
   font-size: 1.125rem;
 }
 .orderMenuImage {
+  display: block;
   transition: 0.3s ease-in-out all;
 }
 .orderMenuImage:hover {
